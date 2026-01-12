@@ -4,7 +4,6 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-6 bg-gradient-to-b from-black to-gray-900 text-white">
       
-      {/* Hero Section */}
       <div className="max-w-4xl w-full text-center space-y-8">
         
         {/* Profile / Intro */}
@@ -14,7 +13,7 @@ export default function Home() {
         
         <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
           Student at VNIT. <br />
-          Obsessed with <span className="text-white font-semibold">Quant Finance</span>, <span className="text-white font-semibold">Reinforcement Learning</span>, and building high-performance systems.
+          Obsessed with <span className="text-white font-semibold">Finance</span>, <span className="text-white font-semibold">Reinforcement Learning</span>, and Artifical Intelligence.
         </p>
 
         {/* Buttons */}
@@ -27,7 +26,7 @@ export default function Home() {
           </Link>
           
           <a 
-            href="https://github.com/PratikNawale" 
+            href="https://github.com/pratik-n30" 
             target="_blank" 
             className="px-8 py-4 border border-gray-700 text-gray-300 font-bold rounded-lg hover:bg-gray-800 transition-all"
           >
