@@ -1,0 +1,14 @@
+[
+  {
+    "year": "2026",
+    "title": "Built Portfolio",
+    "description": "Created a Next.js site with custom file system.",
+    "type": "project"
+  },
+  {
+    "year": "2025",
+    "title": "BTech",
+    "description": "Studied at VNIT Nagpur.",
+    "type": "education"
+  }
+]

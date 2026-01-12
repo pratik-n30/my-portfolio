@@ -1,0 +1,7 @@
+{
+  "id": "sentitrader",
+  "title": "SentiTrader",
+  "description": "An RL-based trading bot that uses PPO and sentiment analysis.",
+  "techStack": ["Python", "PyTorch", "Transformers"],
+  "githubUrl": "https://github.com/yourusername/sentitrader" 
+}
