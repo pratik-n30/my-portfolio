@@ -1,4 +1,4 @@
-"use client"; // This makes the buttons clickable
+"use client"; 
 
 import { useState } from 'react';
 import Link from 'next/link';

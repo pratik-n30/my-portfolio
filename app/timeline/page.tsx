@@ -2,7 +2,7 @@ import { getTimelineData } from '../../lib/api'; // <--- Importing the Waiter
 
 export default function Timeline() {
   
-  // 1. The Order: Ask the Waiter for the list of events
+  // 1. Get the Timeline Data
   const events = getTimelineData();
 
   return (
@@ -11,7 +11,7 @@ export default function Timeline() {
       
       <div className="max-w-2xl mx-auto border-l-2 border-gray-800 ml-4 md:ml-auto space-y-12">
         
-        {/* 2. The Meal: We loop through the data the waiter brought back */}
+        {/* 2. Loop through events and make cards */}
         {events.map((event: any, index: number) => (
           <div key={index} className="relative pl-8">
             

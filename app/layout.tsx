@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-// Notice we still use @/components because Next.js knows where root is
 import Navbar from "@/components/navbar"; 
 
 const inter = Inter({ subsets: ["latin"] });

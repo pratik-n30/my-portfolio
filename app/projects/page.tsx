@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { getAllProjects } from '../../lib/api'; // Import the Waiter
+import { getAllProjects } from '../../lib/api'; 
 
 export default function ProjectsPage() {
   
-  // 1. Ask the Waiter for ALL projects
+  // 1. Get all projects
   const projects = getAllProjects();
 
   return (
@@ -16,7 +16,7 @@ export default function ProjectsPage() {
         {projects.map((project: any) => (
           <Link 
             key={project.id} 
-            href={`/projects/${project.id}`} // This links to the detail page (we will build next)
+            href={`/projects/${project.id}`} // This links to the detail page 
             className="block group"
           >
             <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 h-full hover:border-blue-500 transition-all">
