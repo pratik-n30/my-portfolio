@@ -2,109 +2,74 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-neutral-950 text-white p-4 md:p-8 font-sans flex flex-col justify-center">
+    <main className="min-h-screen bg-black text-white p-6 md:p-12 flex items-center justify-center">
       
-      {/* CHANGE: Removed 'max-w-6xl' and replaced with 'w-full max-w-[95%]' 
-         This forces the grid to stretch across your entire landscape monitor.
+      {/* w-full = Use 100% of available width
+         max-w-[1600px] = Stop growing only on massive 4k screens
       */}
-      <div className="w-full max-w-[95%] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 h-[85vh]">
+      <div className="w-full max-w-[1600px] grid grid-cols-1 md:grid-cols-2 gap-6 h-[85vh]">
         
-        {/* 1. THE PROFILE CARD (Left Column - Text Only) */}
-        <div className="lg:col-span-1 bg-white text-black rounded-3xl p-10 flex flex-col justify-between border border-gray-200 shadow-2xl relative overflow-hidden h-full">
+        {/* LEFT COLUMN: Identity (Clean, White, Simple) */}
+        <div className="bg-white text-black rounded-3xl p-12 flex flex-col justify-center shadow-2xl relative overflow-hidden">
           
-          <div className="absolute top-0 right-0 w-48 h-48 bg-orange-200 rounded-full blur-3xl -mr-20 -mt-20 opacity-60"></div>
-
-          <div className="mt-4">
-            <h5 className="text-gray-500 font-bold tracking-wider uppercase text-sm mb-6">Portfolio</h5>
-            
-            <h1 className="text-6xl xl:text-8xl font-extrabold tracking-tight mb-6 leading-[0.9]">
+          <div className="z-10">
+            <h1 className="text-7xl md:text-9xl font-extrabold tracking-tighter mb-6 leading-none">
               Pratik <br /> Nawale
             </h1>
             
-            <div className="h-3 w-32 bg-orange-500 mb-10 rounded-full"></div>
+            <div className="h-4 w-32 bg-orange-500 mb-8"></div>
             
-            <p className="text-2xl xl:text-3xl text-gray-700 leading-relaxed font-medium max-w-md">
-              <span className="text-black font-bold">Quant and AI Developer</span>. <br />
-              Specializing in <br/> Reinforcement Learning & Algo-Trading.
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Quant Developer.
+            </h2>
+            
+            <p className="text-xl text-gray-600 max-w-lg leading-relaxed">
+              Building autonomous agents and high-frequency trading systems with Reinforcement Learning.
             </p>
           </div>
 
-          {/* Social Icons / Links */}
-          <div className="flex flex-col gap-4 mb-4">
-            <a 
-              href="https://github.com/pratik-n30" 
-              target="_blank" 
-              className="flex items-center justify-between px-8 py-5 bg-black text-white rounded-2xl hover:bg-gray-800 transition group text-lg"
-            >
-              <span className="font-bold">GitHub Profile</span>
-              <span className="group-hover:translate-x-1 transition">→</span>
-            </a>
-            <a 
-              href="mailto:your-email@example.com" 
-              className="flex items-center justify-between px-8 py-5 bg-gray-100 text-black rounded-2xl hover:bg-gray-200 transition group text-lg"
-            >
-              <span className="font-bold">Contact Me</span>
-              <span className="group-hover:translate-x-1 transition">→</span>
-            </a>
-          </div>
+          {/* Decorative Blur (Optional, subtle) */}
+          <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-gray-200 rounded-full blur-3xl opacity-50"></div>
         </div>
 
-        {/* 2. THE RIGHT SIDE (Stats + Cards) */}
-        <div className="lg:col-span-2 flex flex-col gap-6 h-full">
+        {/* RIGHT COLUMN: Navigation (Big, Bold Buttons) */}
+        <div className="flex flex-col gap-6 h-full">
           
-          {/* Top Row: STATS (Made taller to fill space) */}
-          <div className="grid grid-cols-3 gap-6 h-1/3">
-            <div className="bg-neutral-900 rounded-3xl flex flex-col justify-center items-center text-center border border-neutral-800 hover:bg-neutral-800 transition">
-              <h2 className="text-5xl xl:text-7xl font-bold text-white mb-2">C++</h2>
-              <p className="text-gray-400 text-sm xl:text-lg uppercase tracking-wider">Core Focus</p>
+          {/* Top Block: PROJECTS (Orange) */}
+          <Link 
+            href="/projects" 
+            className="group flex-1 bg-orange-600 rounded-3xl p-12 flex flex-col justify-center transition hover:bg-orange-500 relative overflow-hidden"
+          >
+            <div className="z-10">
+              <h3 className="text-5xl md:text-7xl font-bold mb-4">Work</h3>
+              <p className="text-xl text-orange-100 max-w-md">
+                View my case studies on SentiTrader, RL Agents, and Financial Modeling.
+              </p>
             </div>
-            <div className="bg-neutral-900 rounded-3xl flex flex-col justify-center items-center text-center border border-neutral-800 hover:bg-neutral-800 transition">
-              <h2 className="text-5xl xl:text-7xl font-bold text-white mb-2">10+</h2>
-              <p className="text-gray-400 text-sm xl:text-lg uppercase tracking-wider">RL Models</p>
+            {/* Arrow Icon */}
+            <div className="absolute bottom-10 right-10 text-6xl group-hover:translate-x-4 transition transform">
+              →
             </div>
-            <div className="bg-neutral-900 rounded-3xl flex flex-col justify-center items-center text-center border border-neutral-800 hover:bg-neutral-800 transition">
-              <h2 className="text-5xl xl:text-7xl font-bold text-white mb-2">VNIT</h2>
-              <p className="text-gray-400 text-sm xl:text-lg uppercase tracking-wider">Scholar</p>
-            </div>
-          </div>
+          </Link>
 
-          {/* Bottom Row: COLORED CARDS (Fills remaining height) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-2/3">
-            
-            {/* Orange Card */}
-            <Link href="/projects" className="group bg-orange-500 rounded-3xl p-10 flex flex-col justify-between transition transform hover:scale-[1.01] border-none">
-              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4 text-white text-4xl">
-                📈
-              </div>
-              <div>
-                <h3 className="text-4xl font-bold text-white mb-4">Quant Finance</h3>
-                <p className="text-orange-100 font-medium text-xl leading-relaxed">
-                  Algorithmic trading strategies, SentiTrader, and market analysis tools.
-                </p>
-              </div>
-              <div className="flex justify-end">
-                <span className="bg-white text-orange-600 px-6 py-3 rounded-full font-bold text-base shadow-lg group-hover:shadow-xl transition">View Projects &rarr;</span>
-              </div>
-            </Link>
-
-            {/* Lime Card */}
-            <div className="bg-lime-400 rounded-3xl p-10 flex flex-col justify-between text-black">
-              <div className="w-16 h-16 bg-black/10 rounded-full flex items-center justify-center mb-4 text-black text-4xl">
-                💻
-              </div>
-              <div>
-                <h3 className="text-4xl font-bold mb-4">Tech Stack</h3>
-                <div className="flex flex-wrap gap-3">
-                   <span className="px-4 py-2 bg-lime-500/30 rounded-xl font-bold text-lg">Python</span>
-                   <span className="px-4 py-2 bg-lime-500/30 rounded-xl font-bold text-lg">PyTorch</span>
-                   <span className="px-4 py-2 bg-lime-500/30 rounded-xl font-bold text-lg">Next.js</span>
-                   <span className="px-4 py-2 bg-lime-500/30 rounded-xl font-bold text-lg">CUDA</span>
-                   <span className="px-4 py-2 bg-lime-500/30 rounded-xl font-bold text-lg">Pandas</span>
-                </div>
-              </div>
+          {/* Bottom Block: GITHUB (Dark Gray) */}
+          <a 
+            href="https://github.com/pratik-n30" 
+            target="_blank" 
+            className="group flex-1 bg-neutral-900 rounded-3xl p-12 flex flex-col justify-center transition hover:bg-neutral-800 border border-neutral-800 relative"
+          >
+            <div className="z-10">
+              <h3 className="text-5xl md:text-7xl font-bold mb-4 text-white">Code</h3>
+              <p className="text-xl text-gray-400 max-w-md">
+                Explore my raw source code, algorithms, and repositories.
+              </p>
             </div>
+             {/* Arrow Icon */}
+             <div className="absolute bottom-10 right-10 text-6xl text-white group-hover:translate-x-4 transition transform">
+              ↗
+            </div>
+          </a>
 
-          </div>
         </div>
       </div>
 
